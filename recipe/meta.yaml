@@ -1,6 +1,6 @@
 {% set name = "skrebate" %}
-{% set version = "0.4" %}
-{% set sha256 = "e7311e2ef54461a2d6df4ac4c81d74dec9e71ccd02040bc7fadb3a5221225cc2" %}
+{% set version = "0.5" %}
+{% set sha256 = "a07e1659e40d240ff8afab9c8a744cb6e0da69c3e60e6147fc441d8944918a6e" %}
 
 package:
   name: {{ name|lower }}
