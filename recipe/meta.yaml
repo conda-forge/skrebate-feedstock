@@ -25,6 +25,7 @@ requirements:
     - python
     - scikit-learn
     - scipy
+    - pandas
 
 test:
   imports:
