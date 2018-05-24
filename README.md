@@ -20,12 +20,15 @@ feature selection methods.
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/skrebate-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/skrebate-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/skrebate-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/skrebate-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/skrebate/badges/version.svg)](https://anaconda.org/conda-forge/skrebate)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/skrebate/badges/downloads.svg)](https://anaconda.org/conda-forge/skrebate)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-skrebate-green.svg)](https://anaconda.org/conda-forge/skrebate) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/skrebate.svg)](https://anaconda.org/conda-forge/skrebate) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/skrebate.svg)](https://anaconda.org/conda-forge/skrebate) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/skrebate.svg)](https://anaconda.org/conda-forge/skrebate) |
 
 Installing skrebate
 ===================
