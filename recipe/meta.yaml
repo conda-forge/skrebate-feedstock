@@ -1,15 +1,13 @@
 {% set name = "skrebate" %}
 {% set version = "0.61" %}
-{% set sha256 = "cb4441e6833ecf5e359f9e1048e78abf7859d8a5da249df6a7d1c80c3b99a5b4" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: cb4441e6833ecf5e359f9e1048e78abf7859d8a5da249df6a7d1c80c3b99a5b4
 
 build:
   number: 0
@@ -22,12 +20,14 @@ requirements:
     - pip
   run:
     - numpy
+    - pandas
     - python
     - scikit-learn
     - scipy
-    - pandas
 
 test:
+  requires:
+    - pip
   imports:
     - skrebate
     - skrebate.multisurf
@@ -38,6 +38,8 @@ test:
     - skrebate.surfstar
     - skrebate.turf
     - skrebate.vlsrelief
+  commands:
+    - python -m pip check
 
 about:
   home: https://epistasislab.github.io/scikit-rebate
