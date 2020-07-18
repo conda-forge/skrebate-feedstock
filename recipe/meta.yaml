@@ -1,6 +1,6 @@
 {% set name = "skrebate" %}
-{% set version = "0.6" %}
-{% set sha256 = "87c7192349302581c85bb1e119088e25d62bc7be35a305ff52f8df2e5fd2f8c0" %}
+{% set version = "0.61" %}
+{% set sha256 = "cb4441e6833ecf5e359f9e1048e78abf7859d8a5da249df6a7d1c80c3b99a5b4" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
