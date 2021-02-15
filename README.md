@@ -5,11 +5,15 @@ Home: https://epistasislab.github.io/scikit-rebate
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/skrebate-feedstock/blob/master/LICENSE.txt)
 
 Summary: A scikit-learn-compatible Python implementation of ReBATE, a suite of
 Relief-based feature selection algorithms for Machine Learning.
 
+
+Development: https://github.com/EpistasisLab/scikit-rebate
+
+Documentation: https://epistasislab.github.io/scikit-rebate
 
 These algorithms excel at identifying features that are predictive of the
 outcome in supervised learning problems, and are especially good at
