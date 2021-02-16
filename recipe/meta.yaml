@@ -1,5 +1,5 @@
 {% set name = "skrebate" %}
-{% set version = "0.61" %}
+{% set version = "0.62" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cb4441e6833ecf5e359f9e1048e78abf7859d8a5da249df6a7d1c80c3b99a5b4
+  sha256: b20dad4dc52f650e1f7960151314840f34251222cae0a78ac23d9f6d377ca558
 
 build:
   number: 0
@@ -15,15 +15,16 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=2.7
     - pip
   run:
     - numpy
-    - pandas
-    - python
+    - python >=2.7
     - scikit-learn
     - scipy
+    # undeclared dep, imported by skrebate.vlsrelief
+    - pandas
 
 test:
   requires:
