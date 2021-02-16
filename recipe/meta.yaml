@@ -23,6 +23,8 @@ requirements:
     - python >=2.7
     - scikit-learn
     - scipy
+    # undeclared dep, imported by skrebate.vlsrelief
+    - pandas
 
 test:
   requires:
