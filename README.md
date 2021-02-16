@@ -130,4 +130,3 @@ Feedstock Maintainers
 * [@lacava](https://github.com/lacava/)
 * [@rhiever](https://github.com/rhiever/)
 * [@weixuanfu](https://github.com/weixuanfu/)
-
