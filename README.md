@@ -13,8 +13,6 @@ Relief-based feature selection algorithms for Machine Learning.
 
 Development: https://github.com/EpistasisLab/scikit-rebate
 
-Documentation: https://epistasislab.github.io/scikit-rebate
-
 These algorithms excel at identifying features that are predictive of the
 outcome in supervised learning problems, and are especially good at
 identifying feature interactions that are normally overlooked by standard
