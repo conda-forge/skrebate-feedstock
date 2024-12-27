@@ -1,26 +1,27 @@
-{% set name = "skrebate" %}
 {% set version = "0.62" %}
 
 package:
-  name: {{ name }}
+  name: skrebate
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/skrebate/skrebate-{{ version }}.tar.gz
   sha256: b20dad4dc52f650e1f7960151314840f34251222cae0a78ac23d9f6d377ca558
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
-    - python >=2.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - numpy
-    - python >=2.7
+    - python >={{ python_min }}
     - scikit-learn
     - scipy
     # undeclared dep, imported by skrebate.vlsrelief
@@ -29,6 +30,7 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - skrebate
     - skrebate.multisurf
@@ -40,7 +42,7 @@ test:
     - skrebate.turf
     - skrebate.vlsrelief
   commands:
-    - python -m pip check
+    - pip check
 
 about:
   home: https://epistasislab.github.io/scikit-rebate
@@ -55,7 +57,6 @@ about:
     outcome in supervised learning problems, and are especially good at
     identifying feature interactions that are normally overlooked by standard
     feature selection methods.
-  doc_url: https://epistasislab.github.io/scikit-rebate
   dev_url: https://github.com/EpistasisLab/scikit-rebate
 
 extra:
