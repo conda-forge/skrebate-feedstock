@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b20dad4dc52f650e1f7960151314840f34251222cae0a78ac23d9f6d377ca558
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=2.7
+    - python {{ python_min }}
     - pip
   run:
     - numpy
-    - python >=2.7
+    - python >={{ python_min }}
     - scikit-learn
     - scipy
     # undeclared dep, imported by skrebate.vlsrelief
@@ -29,6 +29,7 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - skrebate
     - skrebate.multisurf
