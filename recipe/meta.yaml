@@ -20,12 +20,11 @@ requirements:
     - pip
     - setuptools
   run:
+    - joblib
     - numpy
     - python >={{ python_min }}
     - scikit-learn
     - scipy
-    # undeclared dep, imported by skrebate.vlsrelief
-    - pandas
 
 test:
   requires:
@@ -40,7 +39,7 @@ test:
     - skrebate.surf
     - skrebate.surfstar
     - skrebate.turf
-    - skrebate.vlsrelief
+    - skrebate.vls
   commands:
     - pip check
 
