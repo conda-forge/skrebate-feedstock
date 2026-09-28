@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/skrebate/skrebate-{{ version }}.tar.gz
-  sha256: b20dad4dc52f650e1f7960151314840f34251222cae0a78ac23d9f6d377ca558
+  sha256: 4b590dfbc64ab5f6d6b215a07a472a7e8f8990f395f37bde33fe171b852b449b
 
 build:
   number: 1
