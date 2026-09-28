@@ -11,13 +11,21 @@ package:
   version: 1!${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/s/skrebate/skrebate-${{ version }}.tar.gz
-  sha256: 4b590dfbc64ab5f6d6b215a07a472a7e8f8990f395f37bde33fe171b852b449b
+  - target_directory: dist
+    url: https://pypi.org/packages/source/s/skrebate/skrebate-${{ version }}.tar.gz
+    sha256: 4b590dfbc64ab5f6d6b215a07a472a7e8f8990f395f37bde33fe171b852b449b
+  - target_directory: src
+    url:
+      # some upstream tags don't have -beta corresponding to a PyPI release
+      - https://github.com/UrbsLab/scikit-rebate/releases/tag/v${{ version }}
+      - https://github.com/UrbsLab/scikit-rebate/releases/tag/v${{ version }}-beta
+    sha256: 6afba3a821bedf5f5877ba6dccebefd932e543d6d832d3ad6f93d92911111fe2
 
 build:
   number: 0
   noarch: python
   script:
+    - cd dist
     - ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
@@ -49,18 +57,21 @@ tests:
         - ${{ python_check_max }}.*
   - files:
       source:
-        - tests/
+        - src/tests/
+        - src/data/
     requirements:
       run:
         - pytest-cov
         - pandas
+        - python ${{ python_min }}.*
     script:
+      - cd src
       - coverage run --source=skrebate --branch -m pytest -vv --tb=long --color=yes
       - coverage report --show-missing --skip-covered --fail-under=100
 
 about:
   license: MIT
-  license_file: LICENSE
+  license_file: dist/LICENSE
   summary: |
     Feature selection algorithms based on Relief-based methods
   homepage: https://pypi.org/project/skrebate
