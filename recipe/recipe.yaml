@@ -17,8 +17,8 @@ source:
   - target_directory: src
     url:
       # some upstream tags don't have -beta corresponding to a PyPI release
-      - https://github.com/UrbsLab/scikit-rebate/releases/tag/v${{ version }}
-      - https://github.com/UrbsLab/scikit-rebate/releases/tag/v${{ version }}-beta
+      - https://github.com/UrbsLab/scikit-rebate/archive/refs/tags/v${{ version }}.tar.gz
+      - https://github.com/UrbsLab/scikit-rebate/archive/refs/tags/v${{ version }}-beta.tar.gz
     sha256: 6afba3a821bedf5f5877ba6dccebefd932e543d6d832d3ad6f93d92911111fe2
 
 build:
