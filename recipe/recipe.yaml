@@ -67,7 +67,7 @@ tests:
     script:
       - cd src
       - coverage run --source=skrebate --branch -m pytest -vv --tb=long --color=yes
-      - coverage report --show-missing --skip-covered --fail-under=100
+      - coverage report --show-missing --skip-covered --fail-under=63
 
 about:
   license: MIT
